@@ -3,7 +3,7 @@
 
 
 @section('script')
-    <script defer src="{{asset('js/cookieManager.js')}}"></script>
+    <script defer src="{{asset('js/basketSubmitScript.js')}}"></script>
 
 @endsection
 

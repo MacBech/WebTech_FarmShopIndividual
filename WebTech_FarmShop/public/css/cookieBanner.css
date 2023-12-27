@@ -8,6 +8,7 @@
     text-align: center;
     font-family: "Montserrat", sans-serif;
     z-index: 999;   /* To make sure it's in the front*/
+    display: none; /* Will only be shown in cookieScript.js, if cookies haven't been accepted */
 }
 
 .cookie-banner h2 {
@@ -28,7 +29,12 @@
     border: solid var(--main-color);
     padding: 8px 16px;
     border-radius: 7px;
+    width: 20%;
     cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-size: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .cookie-banner button:hover, #accept-button:hover {
@@ -41,10 +47,3 @@
     color: #0b2e13;
     border-color: var(--main-color);
 }
-
-
-
-/*
-transform: scale(1.50);
-
-*/

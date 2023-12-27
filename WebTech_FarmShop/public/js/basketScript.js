@@ -1,14 +1,7 @@
-console.log("BASKET BUY YEE");
-
-// Updates the page when you enter (no need to fetch basket)
-// document.addEventListener("DOMContentLoaded", function () {
-//     updateBasket();
-// });
-
 
 function updateBasket() {
 
-    // Retrives basket
+    // Retrieves basket
     let storedBasket = localStorage.getItem("loadedBasket");
     myBasket = JSON.parse(storedBasket);
 
