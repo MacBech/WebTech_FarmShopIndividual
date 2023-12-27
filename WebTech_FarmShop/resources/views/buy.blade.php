@@ -1,8 +1,12 @@
 @extends('ViewTemplate')
 
+
+
 @section('script')
     <script defer src="{{asset('js/cookieManager.js')}}"></script>
+
 @endsection
+
 
 
 @section('title')

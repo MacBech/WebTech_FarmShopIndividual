@@ -1,0 +1,50 @@
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #beffbe;
+    padding: 8px;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    z-index: 999;   /* To make sure it's in the front*/
+}
+
+.cookie-banner h2 {
+    border-bottom: 1px solid #000000;
+    margin: 4px auto;
+    width: 59%;
+}
+
+.cookie-banner p {
+    max-width: 600px;
+    text-align: justify;
+    margin: 0 auto 2px; /* To center <p> */
+}
+
+.cookie-banner button {
+    background-color: var(--main-color);
+    color: white;
+    border: solid var(--main-color);
+    padding: 8px 16px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.cookie-banner button:hover, #accept-button:hover {
+    background-color: #30d5f6;
+}
+
+#accept-button {
+    background-color: #beffbe;
+    border: solid;
+    color: #0b2e13;
+    border-color: var(--main-color);
+}
+
+
+
+/*
+transform: scale(1.50);
+
+*/
