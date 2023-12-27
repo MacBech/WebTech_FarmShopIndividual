@@ -1,3 +1,4 @@
+<div id="cookie-overlay"></div>
 <div id="cookie-banner" class="cookie-banner">
     <h2>Cookie information</h2>
     <p>This website uses cookies to enhance your experience.
@@ -6,5 +7,4 @@
         helping us improve our services and provide you with a better user experience. </p>
     <button id="accept-button">Accept</button>
     <button id="deny-button">Deny</button>
-
 </div>

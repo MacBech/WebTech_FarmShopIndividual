@@ -17,10 +17,12 @@ function checkCookie() {
 
 function showBanner() {
     document.querySelector('#cookie-banner').style.display = 'block';
+    document.querySelector('#cookie-overlay').style.display = 'block';
 }
 
 function unshowBanner() {
     document.querySelector('#cookie-banner').style.display = 'none';
+    document.querySelector('#cookie-overlay').style.display = 'none';
 }
 
 // Initial check to load
@@ -30,7 +32,7 @@ checkCookie();
 //Accept
 document.getElementById('accept-button').addEventListener('click', function () {
     // Setting a cookie to remember users setting
-    document.cookie = 'cookie_accepted=true; expires=Thu, 31 Dec 2037 23:59:59 UTC; path=/';
+    document.cookie = 'cookie_accepted=true; expires=Thu, 31 Dec 2037 23:59:59 UTC; Secure;path=/';
 
     expandedCookie = true;
     expandedCookieManager();
@@ -41,7 +43,7 @@ document.getElementById('accept-button').addEventListener('click', function () {
 
 //Deny
 document.getElementById('deny-button').addEventListener('click', function () {
-    document.cookie = 'cookie_denied=true; expires=Thu, 31 Dec 2037 23:59:59 UTC; path=/';
+    document.cookie = 'cookie_denied=true; expires=Thu, 31 Dec 2037 23:59:59 UTC; Secure; path=/';
 
     functionalCookie = true;
 
