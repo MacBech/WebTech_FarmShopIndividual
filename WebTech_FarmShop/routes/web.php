@@ -27,44 +27,45 @@ Route::get('/', function () {
     return view('homeController');
 });
 */
-Route::middleware(['adminAuth'])->group(function (){
-    Route::get('/admin', [AdminController::class,'getAdminPage'])->name("admin");
+
+Route::middleware(['adminAuth'])->group(function () {
+    Route::get('/admin', [AdminController::class, 'getAdminPage'])->name("admin");
     Route::delete('/admin/{id}', 'AdminController@destroy')->name('user.deleteUser');
-    Route::post('AdminController/createProduct',[AdminController::class,'createProduct'])->name('createProduct');
+    Route::post('AdminController/createProduct', [AdminController::class, 'createProduct'])->name('createProduct');
     Route::post('/products/{id}', [AdminController::class, 'updateProduct'])->name('products.updateProduct');
     Route::delete('/delete-item/{name}', [AdminController::class, 'deleteProductByName']);
-    Route::put('/update-stock/{id}','BasketController@updateQuantity');
+    Route::put('/update-stock/{id}', 'BasketController@updateQuantity');
 });
 
-Route::middleware(['auth'])->group(function (){
-    Route::get('/buy', [BuyController::class,'getBuyPage'])->name("buy");
-    Route::post('/BasketController/finalizePurchase',[BasketController::class,'finalizePurchase'])->name('confirmBuy');
-    Route::get('/userpage', function () {
-        return view('userpage');
-    })->name("userpage");
-    Route::get('/userpage/{id}', [UserController::class,'userOrderHistory'])->name("userpage");
-    Route::get('/basket', function () {
-        return view('basket');
-    })->name("basket");
-    Route::get('/Stock/{id}', 'ItemController@getItem')->name('get.item');
+Route::middleware(['auth'])->group(function () {
 });
+
+Route::get('/buy', [BuyController::class, 'getBuyPage'])->name("buy");
+Route::post('/BasketController/finalizePurchase', [BasketController::class, 'finalizePurchase'])->name('confirmBuy');
+Route::get('/userpage', function () {
+    return view('userpage');
+})->name("userpage");
+Route::get('/userpage/{id}', [UserController::class, 'userOrderHistory'])->name("userpage");
+Route::get('/basket', function () {
+    return view('basket');
+})->name("basket");
+Route::get('/Stock/{id}', 'ItemController@getItem')->name('get.item');
 
 Route::get('/', function () {
     return view('home');
 })->name("home");
+
 Route::get('/login', function () {
     return view('login');
 })->name("login");
+Route::get('/logOut', [LogOutController::class, 'logout'])->name("logOut");
+Route::post('/loginAuth', [LoginController::class, 'authenticate'])->name("loginAuth");
 
-Route::get('/logOut',[LogOutController::class,'logout'] )->name("logOut");
-
-Route::post('/loginAuth',[LoginController::class,'authenticate'] )->name("loginAuth");
-
-Route::get('/registerPage', function (){
+Route::get('/registerPage', function () {
     return view('register');
 })->name("registerPage");
 
-Route::post('RegisterController/register',[RegisterController::class,'register'] )->name('register');
+Route::post('RegisterController/register', [RegisterController::class, 'register'])->name('register');
 Route::get('/welcome', function () {
     return view('welcome');
 })->name("welcome");

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    @include('components.cookie-banner')
+{{--    @include('components.cookie-banner')--}}
 
 
     @yield('title')
